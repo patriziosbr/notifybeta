@@ -1,11 +1,16 @@
-import { FaSignInAlt, FaSignOutAlt, FaUser } from 'react-icons/fa'
-import { Link, useNavigate, NavLink } from 'react-router-dom'
+import { FaSignInAlt, FaSignOutAlt, FaUser, FaTelegram } from 'react-icons/fa'
+import { useNavigate, NavLink } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { logout, reset } from '../features/auth/authSlice'
 
-import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 function Header() {
   const navigate = useNavigate()
@@ -20,70 +25,40 @@ function Header() {
 
   return (
     <>
-    <Navbar className="bg-body-tertiary" fixed="top">
-      <Container>
-      <Navbar.Brand href='/'>Notify</Navbar.Brand>
+    <Container fluid className="bg-body-tertiary" style={{position:"fixed", top:"0", height:'60px'}}>
+      <Navbar className='container' >
+        <Navbar.Brand href='/' className='d-flex align-items-center'>
+            <FaTelegram className="mr-1"/>
+            Notify
+          </Navbar.Brand>
           <Nav className="me-auto">
-            {/* <NavLink style={{marginRight:'10px', textDecoration:"none"}} className="text-dark" activeclassname="active" to='/'>GoalSetter</NavLink> */}
-            {/* <NavLink style={{marginRight:'10px', textDecoration:"none"}} className="text-dark" activeclassname="active" to='/add-event'>Add Event</NavLink> */}
-            <NavLink style={{marginRight:'10px', textDecoration:"none"}} className="text-dark" activeclassname="active" to='/events'>Events</NavLink>
+            {/* <NavLink style={{marginRight:'10px', textDecoration:"none"}} className="text-dark" activeclassname="active" to='/'>GoalSetter</NavLink>
+            <NavLink style={{marginRight:'10px', textDecoration:"none"}} className="text-dark" activeclassname="active" to='/add-event'>Add Event</NavLink> */}
+            {user && (<NavLink style={{marginRight:'10px', textDecoration:"none"}} className="text-dark" activeclassname="active" to='/events'>Events</NavLink> )} 
           </Nav>
-        <Navbar.Toggle />
-        <Navbar.Collapse className="justify-content-end">
-          <Navbar.Text>
-            {user ? (
-              <button className='btn' onClick={onLogout}>
-                <FaSignOutAlt /> Logout
-              </button>
-            ) : (
-              <>
-                <NavLink to='/login' style={{marginRight:'10px', textDecoration:"none"}} >
-                  <FaSignInAlt /> Login
-                </NavLink>
-                <NavLink to='/register' style={{marginRight:'10px', textDecoration:"none"}}>
-                  <FaUser /> Register
-                </NavLink>
-              </>
-            )}
-          </Navbar.Text>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-    {/* <header className='header'>
-      <div style={{display:'flex'}}>
-        <div style={{marginRight:'10px'}}>
-          <NavLink activeclassname="active" to='/'>GoalSetter</NavLink>
-        </div>
-        <div style={{marginRight:'10px'}}>
-          <NavLink activeclassname="active" to='/add-event'>Add Event</NavLink>
-        </div>
-        <div style={{marginRight:'10px'}}>
-          <NavLink activeclassname="active" to='/events'>Events</NavLink>
-        </div>
-      </div>
-      <ul>
-        {user ? (
-          <li>
-            <button className='btn' onClick={onLogout}>
-              <FaSignOutAlt /> Logout
-            </button>
-          </li>
-        ) : (
-          <>
-            <li>
-              <NavLink to='/login'>
-                <FaSignInAlt /> Login
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to='/register'>
-                <FaUser /> Register
-              </NavLink>
-            </li>
-          </>
-        )}
-      </ul>
-    </header> */}
+          <Navbar.Toggle />
+          <Navbar.Collapse className="justify-content-end">
+            <Navbar.Text>
+              {user ? (
+                <button className='btn' onClick={onLogout}>
+                  <FaSignOutAlt /> Logout
+                </button>
+              ) : (
+                <>
+                  <NavLink to='/login' style={{marginRight:'10px', textDecoration:"none"}} >
+                    <FaSignInAlt /> Login
+                  </NavLink>
+                  <NavLink to='/register' style={{marginRight:'10px', textDecoration:"none"}}>
+                    <FaUser /> Register
+                  </NavLink>
+                </>
+              )}
+            </Navbar.Text>
+          </Navbar.Collapse>
+      </Navbar>
+      
+    </Container>
+ 
     </>
   )
 }

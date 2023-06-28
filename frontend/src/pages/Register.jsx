@@ -6,6 +6,12 @@ import { FaUser } from 'react-icons/fa'
 import { register, reset } from '../features/auth/authSlice'
 import Spinner from '../components/Spinner'
 
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 function Register() {
   const [formData, setFormData] = useState({
     name: '',
@@ -64,66 +70,45 @@ function Register() {
 
   return (
     <>
-      <section className='heading'>
-        <h1>
-          <FaUser /> Register
-        </h1>
+      <Container>
+      <section style={{marginTop:"80px"}}>
+        <div style={{backgroundColor: "#f2f6ff",
+          borderRadius: "50%",
+          aspectRatio: "1",
+          display: "flex",
+          height: "90px",
+          margin: "auto",
+          justifyContent: "center",
+          alignItems: "center",
+          marginBottom: "15px"
+        }}>
+          <FaUser style={{fontSize:"60px", color:"#0d6efd" }}/>
+        </div>
+        <h1>Register</h1>
         <p>Please create an account</p>
       </section>
-
-      <section className='form'>
-        <form onSubmit={onSubmit}>
-          <div className='form-group'>
-            <input
-              type='text'
-              className='form-control'
-              id='name'
-              name='name'
-              value={name}
-              placeholder='Enter your name'
-              onChange={onChange}
-            />
-          </div>
-          <div className='form-group'>
-            <input
-              type='email'
-              className='form-control'
-              id='email'
-              name='email'
-              value={email}
-              placeholder='Enter your email'
-              onChange={onChange}
-            />
-          </div>
-          <div className='form-group'>
-            <input
-              type='password'
-              className='form-control'
-              id='password'
-              name='password'
-              value={password}
-              placeholder='Enter password'
-              onChange={onChange}
-            />
-          </div>
-          <div className='form-group'>
-            <input
-              type='password'
-              className='form-control'
-              id='password2'
-              name='password2'
-              value={password2}
-              placeholder='Confirm password'
-              onChange={onChange}
-            />
-          </div>
-          <div className='form-group'>
-            <button type='submit' className='btn btn-block'>
-              Submit
-            </button>
-          </div>
-        </form>
-      </section>
+      <Form className="mb-3" onSubmit={onSubmit}>
+        <Form.Group className="mb-3">
+          <Form.Label>Name</Form.Label>
+          <Form.Control type="text" id='name' name="name" value={name} placeholder='Enter your name' onChange={onChange} />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Email</Form.Label>
+          <Form.Control type="email" id='email' name="email" value={email} placeholder='Enter your email' onChange={onChange} />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Password</Form.Label>
+          <Form.Control type="password" id='password' name="password" value={password} placeholder='Enter password' onChange={onChange} />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Confirm Password</Form.Label>
+          <Form.Control type="password2" id='password2' name="password2" value={password2} placeholder='Confirm password' onChange={onChange} />
+        </Form.Group>
+        <Button className='btn btn-primary' style={{width:"100%"}}>
+          Submit
+        </Button>
+      </Form>
+      </Container>
     </>
   )
 }
