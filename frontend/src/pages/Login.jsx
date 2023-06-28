@@ -91,7 +91,7 @@ function Login() {
             <Form.Label>Password</Form.Label>
             <Form.Control type="password" id='password' name="password" value={password} placeholder='Enter password' onChange={onChange} />
           </Form.Group>
-          <Button className='btn btn-primary' style={{width:"100%"}}>
+          <Button type="submit" className='btn btn-primary' style={{width:"100%"}}>
             Submit
           </Button>
         </Form>

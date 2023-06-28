@@ -104,7 +104,7 @@ function Register() {
           <Form.Label>Confirm Password</Form.Label>
           <Form.Control type="password2" id='password2' name="password2" value={password2} placeholder='Confirm password' onChange={onChange} />
         </Form.Group>
-        <Button className='btn btn-primary' style={{width:"100%"}}>
+        <Button type='submit' className='btn btn-primary' style={{width:"100%"}}>
           Submit
         </Button>
       </Form>
