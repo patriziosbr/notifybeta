@@ -25,7 +25,7 @@ function Header() {
 
   return (
     <>
-    <Container fluid className="bg-body-tertiary" style={{position:"fixed", top:"0", height:'60px'}}>
+    <Container fluid className="bg-body-tertiary" style={{position:"fixed", top:"0", height:'60px', zIndex: 999}}>
       <Navbar className='container' >
         <Navbar.Brand href='/' className='d-flex align-items-center'>
             <FaTelegram className="mr-1"/>

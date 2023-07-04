@@ -2,13 +2,15 @@ import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import Spinner from '../components/Spinner'
-import WithHeaderAndQuoteExample from '../components/WithHeaderAndQuoteExample'
+import SingleEvent from '../components/SingleEvent'
 import { getEvents, reset } from '../features/events/eventSlice'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-function Dashboard() {
+
+function EventDashboard() {
+
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
@@ -48,19 +50,17 @@ function Dashboard() {
 
             <section className=''>
             {events.map((event) => (
-              <WithHeaderAndQuoteExample event={event}/>
+              <SingleEvent key={event._id} event={event}/>
 
             ))}
             </section>
+
           </Col>
         </Row>
       </Container>
-
-
-
 
     </>
   )
 }
 
-export default Dashboard
+export default EventDashboard

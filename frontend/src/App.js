@@ -7,7 +7,7 @@ import Header from './components/Header'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import AddEvent from "./pages/AddEvent"
-import Events from "./pages/Events"
+import EventDashboard from "./pages/EventDashboard"
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
             <Route exact path='/login' element={<Login />} />
             <Route exact path='/register' element={<Register />} />
             <Route exact path='/' element={<AddEvent />} />
-            <Route exact path='/events' element={<Events />} />
+            <Route exact path='/events' element={<EventDashboard />} />
           </Routes>
         </div>
       </Router>
