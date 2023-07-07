@@ -8,6 +8,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import AddEvent from "./pages/AddEvent"
 import EventDashboard from "./pages/EventDashboard"
+import CalendarTest from './pages/CalendarTest'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route exact path='/register' element={<Register />} />
             <Route exact path='/' element={<AddEvent />} />
             <Route exact path='/events' element={<EventDashboard />} />
+            <Route exact path='/CalendarTest' element={<CalendarTest />} />
           </Routes>
         </div>
       </Router>

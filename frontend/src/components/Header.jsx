@@ -35,6 +35,7 @@ function Header() {
             {/* <NavLink style={{marginRight:'10px', textDecoration:"none"}} className="text-dark" activeclassname="active" to='/'>GoalSetter</NavLink>
             <NavLink style={{marginRight:'10px', textDecoration:"none"}} className="text-dark" activeclassname="active" to='/add-event'>Add Event</NavLink> */}
             {user && (<NavLink style={{marginRight:'10px', textDecoration:"none"}} className="text-dark" activeclassname="active" to='/events'>Events</NavLink> )} 
+            {user && (<NavLink style={{marginRight:'10px', textDecoration:"none"}} className="text-dark" activeclassname="active" to='/CalendarTest'>CalendarTest</NavLink> )} 
           </Nav>
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
