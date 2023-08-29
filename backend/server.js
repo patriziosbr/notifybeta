@@ -4,11 +4,14 @@ const colors = require("colors");
 const dotenv = require("dotenv").config();
 const {errorHandler} = require('./middleware/errorMiddleware');
 const connectDB = require("./config/db");
+const cors = require('cors'); // Import the cors middleware
 const port = process.env.PORT || 5001;
 
 connectDB()
 
 const app = express();
+
+app.use(cors()); // Use the cors middleware
 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}))
