@@ -1,7 +1,7 @@
 import axios from 'axios'
 const BASE_URL = process.env.API_URL_ENV;
 
-const API_URL = `${BASE_URL}api/users/`
+const API_URL = `${BASE_URL}/api/users/`
 // const API_URL = 'api/users/' originale
 
 // Register user
