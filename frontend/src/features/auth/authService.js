@@ -1,6 +1,6 @@
 import axios from 'axios'
 import dotenv from 'dotenv';
-dotenv.config({ path: '../../../env' }); 
+dotenv.config({ path: '../../../../.env' }); 
 
 const API_URL = process.env.API_URL_ENV + "/api/users/";
 
