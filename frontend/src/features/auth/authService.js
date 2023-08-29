@@ -1,7 +1,8 @@
 import axios from 'axios'
-const BASE_URL_BASE = process.env.API_URL_ENV;
 
-const API_URL = "https://notifybeta.onrender.com/api/users/";
+const API_URL = process.env.API_URL_ENV + "/api/users/";
+
+// const API_URL = "https://notifybeta.onrender.com/api/users/"; OK!!!
 // const API_URL = '/api/users/'
 
 // Register user
