@@ -1,6 +1,10 @@
 import axios from 'axios'
 
-const API_URL = 'https://notifybeta.onrender.com/api/event/'
+// const API_URL = 'https://notifybeta.onrender.com/api/event/' // OK
+
+const API_URL = process.env.REACT_APP_NODE_ENV === 'production'
+  ? process.env.REACT_APP_SECRET_NAME
+  : '/api/event/';
 
 // Get user events
 const getEvents = async (token) => {

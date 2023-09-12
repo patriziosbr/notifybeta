@@ -1,9 +1,11 @@
 import axios from 'axios'
 
-// const API_URL = process.env.API_URL_ENV + "/api/users/"; DA RIPROVARE
 
-const API_URL = "https://notifybeta.onrender.com/api/users/"; //OK!!!
-// const API_URL = '/api/users/'
+// const API_URL = "https://notifybeta.onrender.com/api/users/"; //OK!!!
+
+const API_URL = process.env.REACT_APP_NODE_ENV === 'production'
+  ? process.env.REACT_APP_SECRET_NAME
+  : '/api/users/';
 
 // Register user
 const register = async (userData) => {

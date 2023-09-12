@@ -1,6 +1,10 @@
 import axios from 'axios'
 
-const API_URL = 'https://notifybeta.onrender.com/api/goals/'
+// let API_URL = 'https://notifybeta.onrender.com/api/goals/' // OLD BUT GOLD
+
+const API_URL = process.env.REACT_APP_NODE_ENV === 'production'
+  ? process.env.REACT_APP_SECRET_NAME
+  : '/api/goals/';
 
 // Create new goal
 const createGoal = async (goalData, token) => {
