@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = '/api/event/'
+const API_URL = 'https://notifybeta.onrender.com/api/event/'
 
 // Get user events
 const getEvents = async (token) => {
