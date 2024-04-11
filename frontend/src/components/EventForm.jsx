@@ -33,7 +33,7 @@ function EventForm() {
 
   useEffect(() => {
     const updatedText = `Ciao ${formData.emailReciever}, 
-      la tua prenotazione è confermata per il giorno ${formData.startAt} alle ore ${formData.hourStart}`;
+      la tua prenotazione è confermata per il giorno ${formData.startAt} alle ore ${formData.hourStart}. Buona giornata`;
     setText(updatedText);
   }, [formData]);
 
